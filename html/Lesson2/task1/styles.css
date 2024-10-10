@@ -5,3 +5,7 @@ header {
 body {
     background-color: beige;
 }
+
+.text_container {
+    text-align: center;
+}
