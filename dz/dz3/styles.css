@@ -22,6 +22,18 @@ h2 {
     text-align: center;
 }
 
+a {
+    color: black;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+a:hover {
+    color: lightcoral;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
 p {
     margin-bottom: 15px;
 }
