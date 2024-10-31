@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    margin: 0;
+    overflow: hidden; /* Скрываем прокрутку */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.rectangle {
+    width: 100px;
+    height: 100px;
+    background-color: #61dafb;
+    transition: transform 0.10s; /* Плавный переход для открытия */
+}
+
+.left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.container:hover .left {
+    transform: rotateY(-30deg); /* Поворачиваем левую створку */
+}
+
+.container:hover .right {
+    transform: rotateY(30deg); /* Поворачиваем правую створку */
+}
+
+.container .left,
+.container .right {
+    transition: transform 0.1s; /* Резкий переход для закрытия */
+}
