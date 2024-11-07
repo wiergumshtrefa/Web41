@@ -6,3 +6,8 @@ uikit-3.21.12
 *.jpg
 *.jpeg
 *.hintrc
+
+# environment
+node_modules
+package-lock.json
+package.json
