@@ -481,6 +481,16 @@ console.log(isEven(4)); // true
 console.log(isEven(5)); // false
 ```
 
+```javascript
+let num = prompt("Введите число:");
+num = Number(num);
+if (num % 2 === 0) {
+    console.log(num + " является четным числом.");
+} else {
+    console.log(num + " является нечетным числом.");
+}
+```
+
 =================================================
 
 ▎Задача 2: Сумма чисел от 1 до N
