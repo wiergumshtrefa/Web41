@@ -10,8 +10,8 @@ html, body {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    display: grid; /* Используем Grid для основного контейнера */
+    grid-template-rows: auto 1fr; /* Заголовок занимает авто высоту, остальные элементы занимают оставшееся пространство */
     height: 100%;
 }
 
@@ -26,22 +26,20 @@ html, body {
 }
 
 .boards-container {
-    display: flex;
-    overflow-x: auto; /* Горизонтальный скролл для контейнера досок */
+    display: grid; /* Используем Grid для контейнера досок */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматически заполняем колонки */
+    gap: 10px; /* Отступ между досками */
     padding: 10px;
+    overflow-y: auto; /* Вертикальный скролл для контейнера досок */
 }
 
 .board {
     background-color: #555; /* Темно-серый цвет доски */
     color: white;
-    width: 300px; /* Ширина доски */
-    min-width: 300px; /* Минимальная ширина доски */
-    max-width: 400px; /* Максимальная ширина доски */
-    margin-right: 10px; /* Отступ между досками */
     padding: 10px;
     border-radius: 8px; /* Скругление углов */
+    height: 100%; /* Высота доски будет зависеть от содержимого */
     overflow-y: auto; /* Вертикальный скролл для доски */
-    height: calc(100vh - 60px); /* Высота доски с учетом заголовка */
 }
 
 .board h2 {

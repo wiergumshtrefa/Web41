@@ -1,96 +1,134 @@
+:root {
+    --bg-color: #f0f0f0;
+    --white: #fff;
+    --left-bg: #e1f5fe;
+    --right-bg: #ffe0b2;
+    --text-color: #999;
+    --avatar-size: 40px;
+    --message-max-width: 70%;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: var(--bg-color);
 }
 
 .chat-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 20px auto;
     padding: 10px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .messages {
-    max-height: 400px; /* Максимальная высота контейнера сообщений */
-    overflow-y: auto; /* Прокрутка по вертикали */
+    max-height: 400px; 
+    overflow-y: auto; 
 }
 
 .message {
-    display: flex;
-    align-items: flex-start; /* Выравнивание по верхнему краю */
-    margin-bottom: 15px; /* Отступ между сообщениями */
-    opacity: 0; /* Начальная прозрачность для анимации */
-    animation: fadeIn 0.3s forwards; /* Анимация появления */
+    display: flex; /* Используем flexbox для размещения аватара и текста */
+    align-items: center; /* Центрируем по вертикали */
+    margin: 10px 0; /* Отступы между сообщениями */
 }
 
 @keyframes fadeIn {
     to {
-        opacity: 1; /* Конечная прозрачность */
+        opacity: 1; 
     }
 }
 
 .message.left {
-    flex-direction: row; /* Расположение аватара слева */
+    flex-direction: row; 
 }
 
 .message.right {
-    flex-direction: row-reverse; /* Расположение аватара справа */
+    flex-direction: row-reverse; 
 }
 
 .avatar {
     width: 40px; /* Ширина аватара */
     height: 40px; /* Высота аватара */
     border-radius: 50%; /* Круглая форма аватара */
-    margin: 0 10px; /* Отступы вокруг аватара */
+    margin-right: 10px; /* Отступ справа от аватара */
+}
+
+.message-content {
+    max-width: var(--message-max-width); 
+    padding: 10px; 
+    position: relative; 
 }
 
 .message.left .message-content {
-    background-color: #e1f5fe; /* Цвет фона для сообщений слева */
-    text-align: left; /* Выравнивание текста по левому краю */
-    border-radius: 8px 8px 8px 0; /* Скругление трех углов */
+    background-color: var(--left-bg); 
+    text-align: left; 
+    border-radius: 8px 8px 8px 0; 
 }
 
 .message.right .message-content {
-    background-color: #ffe0b2; /* Цвет фона для сообщений справа */
-    text-align: right; /* Выравнивание текста по правому краю */
-    border-radius: 8px 8px 0 8px; /* Скругление трех углов */
+    background-color: var(--right-bg); 
+    text-align: right; 
+    border-radius: 8px 8px 0 8px; 
 }
 
-.message.right .message-content {
-    background-color: #ffe0b2; /* Цвет фона для сообщений справа */
-    text-align: right; /* Выравнивание текста по правому краю */
-}
-
-.message.left .message-content::after {
-    content: '';
-    position: absolute;
-    top: 10px; /* Положение по вертикали */
-    left: -10px; /* Положение по горизонтали */
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #e1f5fe transparent transparent; /* Острый угол слева */
-}
-
+.message.left .message-content::after,
 .message.right .message-content::after {
     content: '';
     position: absolute;
-    top: 10px; /* Положение по вертикали */
-    right: -10px; /* Положение по горизонтали */
+    top: 10px; 
     border-width: 10px;
     border-style: solid;
-    border-color: transparent transparent transparent #ffe0b2; /* Острый угол справа */
+}
+
+.message.left .message-content::after {
+    left: -10px; 
+    border-color: transparent var(--left-bg) transparent transparent; 
+}
+
+.message.right .message-content::after {
+    right: -10px; 
+    border-color: transparent transparent transparent var(--right-bg); 
 }
 
 .username {
-    font-weight: bold; /* Жирный шрифт для имени пользователя */
+    font-weight: bold; 
 }
 
 .timestamp {
-    display: block; /* Отображение времени на новой строке */
-    font-size: 0.8em; /* Уменьшенный размер шрифта для времени */
-    color: #999; /* Цвет для времени сообщения */
+    display: block; 
+    font-size: 0.8em; 
+    color: var(--text-color); 
 }
+
+/* Пример медиа-запроса для мобильных устройств */
+@media (max-width: 600px) {
+    .chat-container {
+        padding: 5px;
+        margin: 10px;
+    }
+
+    .message-content {
+        max-width: 90%; /* Увеличение ширины сообщения на мобильных устройствах */
+    }
+}
+
+.input-container {
+    display: flex; /* Выравнивание поля ввода и кнопки */
+}
+
+.message-input {
+    flex-grow: 1; /* Поле ввода занимает все доступное пространство */
+}
+
+.send-button {
+    padding: 10px;
+    background-color: var(--left-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
