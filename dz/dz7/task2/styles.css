@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.chat-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.messages {
+    max-height: 400px; /* Максимальная высота контейнера сообщений */
+    overflow-y: auto; /* Прокрутка по вертикали */
+}
+
+.message {
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    margin-bottom: 15px; /* Отступ между сообщениями */
+    opacity: 0; /* Начальная прозрачность для анимации */
+    animation: fadeIn 0.3s forwards; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Конечная прозрачность */
+    }
+}
+
+.message.left {
+    flex-direction: row; /* Расположение аватара слева */
+}
+
+.message.right {
+    flex-direction: row-reverse; /* Расположение аватара справа */
+}
+
+.avatar {
+    width: 40px; /* Ширина аватара */
+    height: 40px; /* Высота аватара */
+    border-radius: 50%; /* Круглая форма аватара */
+    margin: 0 10px; /* Отступы вокруг аватара */
+}
+
+.message.left .message-content {
+    background-color: #e1f5fe; /* Цвет фона для сообщений слева */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border-radius: 8px 8px 8px 0; /* Скругление трех углов */
+}
+
+.message.right .message-content {
+    background-color: #ffe0b2; /* Цвет фона для сообщений справа */
+    text-align: right; /* Выравнивание текста по правому краю */
+    border-radius: 8px 8px 0 8px; /* Скругление трех углов */
+}
+
+.message.right .message-content {
+    background-color: #ffe0b2; /* Цвет фона для сообщений справа */
+    text-align: right; /* Выравнивание текста по правому краю */
+}
+
+.message.left .message-content::after {
+    content: '';
+    position: absolute;
+    top: 10px; /* Положение по вертикали */
+    left: -10px; /* Положение по горизонтали */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #e1f5fe transparent transparent; /* Острый угол слева */
+}
+
+.message.right .message-content::after {
+    content: '';
+    position: absolute;
+    top: 10px; /* Положение по вертикали */
+    right: -10px; /* Положение по горизонтали */
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ffe0b2; /* Острый угол справа */
+}
+
+.username {
+    font-weight: bold; /* Жирный шрифт для имени пользователя */
+}
+
+.timestamp {
+    display: block; /* Отображение времени на новой строке */
+    font-size: 0.8em; /* Уменьшенный размер шрифта для времени */
+    color: #999; /* Цвет для времени сообщения */
+}

@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: sticky; /* Фиксируем заголовок при прокрутке */
+    top: 0;
+    z-index: 1000; /* Убедимся, что заголовок поверх других элементов */
+}
+
+.boards-container {
+    display: flex;
+    overflow-x: auto; /* Горизонтальный скролл для контейнера досок */
+    padding: 10px;
+}
+
+.board {
+    background-color: #555; /* Темно-серый цвет доски */
+    color: white;
+    width: 300px; /* Ширина доски */
+    min-width: 300px; /* Минимальная ширина доски */
+    max-width: 400px; /* Максимальная ширина доски */
+    margin-right: 10px; /* Отступ между досками */
+    padding: 10px;
+    border-radius: 8px; /* Скругление углов */
+    overflow-y: auto; /* Вертикальный скролл для доски */
+    height: calc(100vh - 60px); /* Высота доски с учетом заголовка */
+}
+
+.board h2 {
+    margin-bottom: 10px;
+}
+
+.board ul {
+    list-style-type: none; /* Убираем маркеры списка */
+}
