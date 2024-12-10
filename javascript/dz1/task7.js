@@ -1,4 +1,6 @@
 const prompt = require('prompt-sync')();
-let gb = prompt('введите количество гигабайт: ');
-let result = gb * 1024 / 820
-console.log(`столько файлов ${result} поместится на флешке`);
+let money = prompt("Введите сумму денег:");
+let chocolate = 12;
+let colvo = Math.floor(money/chocolate);
+let ostatok = money % chocolate;
+console.log(`Сколько вы можете купить шоколада: ${colvo}, у вас останется ${ostatok}`);
