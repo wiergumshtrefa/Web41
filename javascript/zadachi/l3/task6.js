@@ -5,4 +5,4 @@ while (num >= 10) {
     num *= 0.9;
     days ++;
 }
-console.log(days)
+console.log(days);
