@@ -1,5 +1,5 @@
 function sayError() {
-    alert('это ошибка!')
-} 
+    alert("Some error occurred!");
+}
 
-document.getElementById('errorButton').addEventListener('click', sayError);
+document.getElementById("errorButton").addEventListener("click", sayError);
