@@ -3,7 +3,6 @@ const prompt = require('prompt-sync')();
 let x = prompt('введите x: ');
 let sinx = prompt('введите sinx: ');
 let a = prompt('введите a:');
-let 
 let n = prompt('введите n: ');
 let sinA = prompt('введите sinA: ');
 let cosB = prompt('введите cosB: ');
