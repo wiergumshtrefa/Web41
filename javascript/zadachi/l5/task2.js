@@ -24,7 +24,7 @@ function collectNumbers() {
         }
     }
 
-    if(numbers.lengh > 0) {
+    if (numbers.length > 0) {
         console.log(`Минимальное значение: ${findMinimum(...numbers)}`);
     } else {
         console.log('Не было введено ни одного числа.');
