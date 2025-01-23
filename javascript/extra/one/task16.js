@@ -20,4 +20,4 @@ console.log(` к) (2 * b * c * cos) (a/2) / (b+c)= ${ (2 * b * c * (Math.cos(Mat
 console.log(` л) (4 * R * sin)(a/2 * sin)(b/2 * sin) (c/2) = ${(4 * R * (Math.sin(Math.PI / 180)))*(a/2 * (Math.sin(Math.PI / 180)))*(b/2 * (Math.sin(Math.PI / 180))*(c/2))}`);
 console.log(` м) (a * x + b) / (c * x +d) = ${(a*x+b)/(c*x+d)}`);
 console.log(` н) (2 * sin ) (a + b) /2 * cos)(a - b) / 2= ${(2*Math.sin(Math.PI / 180))*(a+b) /2 * (Math.cos(Math.PI / 180))*(a-b)/2} `);
-console.log(` о) abs(2 * sin ) * (-3 * abs(x/2))=${(Math.abs(2*(Math.sin(Math.PI / 180))))*(-3 * (Math.abs(x/2)))}`);
+console.log(` о) abs(2 * sin ) * (-3 * abs(x/2))=${(Math.abs((Math.sin(2 * Math.PI / 180))))*(-3 * (Math.abs(x/2)))}`);
