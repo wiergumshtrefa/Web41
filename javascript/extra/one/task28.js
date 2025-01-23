@@ -1,7 +1,5 @@
 const prompt = require('prompt-sync')();
-prompt 
-
-let a = prompt('введите длинну ребра:');
+let a = prompt("введите длину ребра:");
 
 let S = (6 * a * a);
 let ob = (a * a * a);
