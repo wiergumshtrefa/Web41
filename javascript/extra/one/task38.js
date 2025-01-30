@@ -1,15 +1,11 @@
+const prompt = require('prompt-sync')();
 
-function Pivko(base1, base2, height) {
-    const side = Math.sqrt(Math.pow(Math.abs(base1 - base2) / 2, 2) + Math.pow(height, 2));
-    return base1 + base2 + 2 * side;
+function trapPerimeter(a, b, h) {
+    const side = Math.sqrt(((a - b) / 2) ** 2 + h ** 2);
+    return (a + b )/2 * side;
   }
+  const a = Number(prompt("Основание a: "));
+  const b = Number(prompt("Основание b: "));
+  const h = Number(prompt("Высота h: "));
   
-  const prompt = require('prompt-sync')();
-  
-  const base1 = prompt("Введите длину первого основания: ");
-  const base2 = prompt("Введите длину второго основания: ");
-  const height = prompt("Введите высоту: ");
-  
-  const per = Pivko(base1, base2, height);
-  
-  console.log("Периметр трапеции:", per);
+  console.log("Периметр:", trapPerimeter(a, b, h));
