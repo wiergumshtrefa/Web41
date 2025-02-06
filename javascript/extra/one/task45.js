@@ -8,8 +8,6 @@ function pepesi(num1, num2) {
     
     return { sum, difference, product, quotient };
 }
-
-// Получаем числа от пользователя
 const num1 = prompt("Введите первое число:");
 const num2 = prompt("Введите второе число:");
 
