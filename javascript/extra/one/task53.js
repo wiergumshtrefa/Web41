@@ -1,14 +1,20 @@
 
-const prompt = require('prompt-sync')();
+const prompt = require('prompt-sync')(); 
+const monitorPrice = Number(prompt("введите цену монитора: "));
+const blockPrice = Number(prompt("введите цену системного блока: "));
+const keyboardPrice = Number(prompt("введите цену клавиатуры: "));
+const mousePrice = Number(prompt("введите цену мышки: "));
+const n = Number(prompt("Введите колличество компьютеров: "));
+  
 
 function calculateCost(monitor, block, keyboard, mouse, n) {
-    return (monitor + block + keyboard + mouse) * n;
-}
+    const computerCost = monitor + block + keyboard + mouse;
+    return computerCost * n;
+  }
+
+  const numComputers = 3; 
+  const totalCost = calculateCost(monitorPrice, blockPrice, keyboardPrice, mousePrice, numComputers);
+  const totalCost1 = calculateCost(monitorPrice, blockPrice, keyboardPrice, mousePrice, n);
   
-const monitorPrice = prompt("введите цену монитора: ");
-const blockPrice = prompt("введите цену системного блока: ");
-const keyboardPrice = prompt("введите цену клавиатуры: ");
-const mousePrice = prompt("введите цену мышки: ");
-  
-console.log("3 компьютера: " + calculateCost(monitorPrice, blockPrice, keyboardPrice, mousePrice, 3));
-console.log(" компьютеров: " + calculateCost(monitorPrice, blockPrice, keyboardPrice, mousePrice, 5));
+  console.log(`компьютеров: ${n} стоят: ${totalCost1}`);
+  console.log(`Стоимость 3 компьютеров: ${totalCost}`);
