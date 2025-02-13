@@ -6,7 +6,6 @@ function dayOfWeek(k, d) {
     return dayNumber;
 }
 
-
 const k = 10; 
 const d1 = 1; 
 const d2 = 2; 
