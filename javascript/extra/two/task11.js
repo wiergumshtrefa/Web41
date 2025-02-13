@@ -1,5 +1,4 @@
 const prompt = require('prompt-sync')();
-
 const num = parseInt(prompt("Введите двузначное число: "));
 
 if (num < 10 || num > 99) {
@@ -7,6 +6,6 @@ if (num < 10 || num > 99) {
 } else {
     const tens = Math.floor(num / 10);
     const units = num % 10;       
-    const reversedNum = units * 10 + tens;
-    console.log(`Число, образованное при перестановке цифр: ${reversedNum}`);
+    const result =units * 10 + tens;
+    console.log(`Число, образованное при перестановке цифр заданного числа: ${result}`)
 }
