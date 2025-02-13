@@ -49,3 +49,4 @@ console.log("Дата текстом:", customDate.toText());
 console.log("Это будущее или настоящее?:", customDate.isFutureOrCurrent());
 console.log("Этот год високосный?:", customDate.isLeapYear());
 console.log("Следующая дата:", customDate.getNextDate().toText());
+
