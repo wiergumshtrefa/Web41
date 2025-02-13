@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')();
+
 const num = parseInt(prompt("Введите двузначное число: "));
 
 if (num < 10 || num > 99) {
