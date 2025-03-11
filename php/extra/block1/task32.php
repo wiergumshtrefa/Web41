@@ -14,7 +14,6 @@ function findOriginalNumber() {
             return $x;
         }
     }
-
     return null; 
 }
 
